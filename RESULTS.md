@@ -30,7 +30,9 @@ Potential duplicate lines remain included; December endpoints are partial period
   confirmed 539,392 rows and GBP 9,769,872.0540 in net transaction value.
 - Monthly SQL output was generated and inspected.
 - A second full-file load completed successfully with the same row count and monetary total.
-- GitHub Actions has not run remotely yet; publication is pending.
+- Published to https://github.com/longta3110/data-ETL-project.
+- GitHub Actions passed all six tests on Ubuntu with PostgreSQL 17:
+  https://github.com/longta3110/data-ETL-project/actions/runs/38456255751
 
 ## Honest interview result
 
