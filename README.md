@@ -1,4 +1,4 @@
-# data-analysis-project
+# data-ETL-project
 
 A Python + PostgreSQL retail data-quality and analytics pipeline, packaged with Docker Compose.
 Personal portfolio work by Long Ta, not an employer project. No dashboard or AWS deployment is claimed.
@@ -88,6 +88,7 @@ Decimal, transactions, and the difference between file-level idempotence and tru
 
 ## GitHub
 
-Target public repository: `longta3110/data-analysis-project`. Publication is pending repository creation.
+Public repository: https://github.com/longta3110/data-ETL-project
+The local folder and Docker Compose project remain named `data-analysis-project`.
 Before pushing: run tests, inspect `git diff --cached`, and ensure no data, passwords or personal files
 are staged. This project does not require any Gmail data.
