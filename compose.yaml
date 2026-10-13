@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: retail
+      POSTGRES_USER: retail
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in your shell}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U retail -d retail"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+  pipeline:
+    build: .
+    environment:
+      PGHOST: db
+      PGDATABASE: retail
+      PGUSER: retail
+      PGPASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in your shell}
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  pgdata:
